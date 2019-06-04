@@ -1,0 +1,142 @@
+:root {
+	--homeColor: rgba(100, 50, 150, 1);
+	--likesColor: rgba(200, 50, 150, 1);
+	--searchColor: rgba(225, 150, 25, 1);
+	--profileColor: rgba(25, 150, 175, 1);
+	--homeBackgroundColor: rgba(100, 50, 150, .25);
+	--likesBackgroundColor: rgba(200, 50, 150, .25);
+	--searchBackgroundColor: rgba(225, 150, 25, .25);
+	--profileBackgroundColor: rgba(25, 150, 175, .25);
+}
+
+html {
+	box-sizing: border-box;
+	background-color: #eee;
+	font-family: sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	background-color: var(--homeBackgroundColor);
+	transition: background-color .8s ease-out;
+	overflow: hidden;
+}
+
+h1 {
+	font-size: 4rem;
+	margin-bottom: 0;
+}
+
+nav {
+	background-color: #eee;
+	width: 100%;
+	max-width: 30rem;
+	padding: 2rem;
+	display: flex;
+	justify-content: space-between;
+	margin-top: auto;
+	border-radius: .5rem;
+	font-size: 1.4rem;
+}
+
+.button {
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    max-width: 1.8rem;
+}
+
+.button p {
+	overflow: hidden;
+	max-width: 0;
+	opacity: 0;
+	transition: max-width .8s ease-out, opacity 1s;
+}
+
+.button i {
+	font-size: 1.8rem;
+}
+
+.button.active {
+	border-radius: 3rem;
+	max-width: 100%;
+}
+
+.button.active p {
+	overflow: visible;
+	margin-left: .8rem;
+	max-width: 100%;
+	opacity: 1;
+}
+
+.home.active {
+    background-color: var(--homeBackgroundColor);
+    color: var(--homeColor);
+}
+
+.likes.active {
+    background-color: var(--likesBackgroundColor);
+    color: var(--likesColor);
+}
+
+.search.active {
+    background-color: var(--searchBackgroundColor);
+    color: var(--searchColor);
+}
+
+.profile.active {
+    background-color: var(--profileBackgroundColor);
+    color: var(--profileColor);
+}
+
+.home:hover i {
+    color: var(--homeColor);
+}
+
+.likes:hover i {
+    color: var(--likesColor);
+}
+
+.search:hover i {
+    color: var(--searchColor);
+}
+
+.profile:hover i {
+    color: var(--profileColor);
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		min-height: 90vh;
+	}
+
+	nav {
+		padding: 1.4rem 0;
+		font-size: 1rem;
+		justify-content: space-around;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	.button {
+		padding: 0 1rem;
+	}
+
+	.button i {
+		font-size: 1.4rem;
+	}
+
+	.button {
+	    max-width: 1.4rem;
+	}
+}
+
